@@ -1,0 +1,32 @@
+﻿@model DepartureBoard.ViewModels.IndexViewModel;
+
+@{
+    ViewData["Title"] = "North Station Commuter Rail Departures";
+}
+
+<h1>MBTA North Station Commuter Rail Departures</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Destination</th>
+            <th>Train</th>
+            <th>Track</th>
+            <th>Status</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DepartureBoardRecord r in Model.DepartureBoardRecords)
+        {
+            <tr>
+                <td>@r.Time</td>
+                <td>@r.Destination</td>
+                <td>@r.Train</td>
+                <td>@r.Track</td>
+                <td>@r.Status</td>                
+            </tr>
+        }
+    </tbody>
+</table>
+
